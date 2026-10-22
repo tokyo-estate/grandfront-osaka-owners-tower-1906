@@ -320,6 +320,7 @@ figcaption .d{display:none}
 .pair img,.pair video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 @media (max-aspect-ratio:1/1){
   .hero .media{aspect-ratio:5/4}
+  .hero .media2{aspect-ratio:16/9}  /* タイムラプスは横幅いっぱい・左右を切らない */
   .hero .media .poster{object-position:50% 50%}
   .pair img,.pair video{aspect-ratio:4/3}
 }
@@ -363,7 +364,7 @@ html[lang="zh"] .hero .info .p small{display:none}
     <div class="scroll">SCROLL</div>
   </div>
   <div class="media2">
-    <video class="lazy" muted loop playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page" preload="none" poster="img/poster_sv_pc.jpg" data-poster-sp="img/poster_sv_sp.jpg" data-webm="video/sv_timelapse_pc.webm" data-mp4="video/sv_timelapse_pc.mp4" data-webm-sp="video/sv_timelapse_sp.webm" data-mp4-sp="video/sv_timelapse_sp.mp4" aria-label="1906からの眺望 朝から夜までのタイムラプス"></video>
+    <video class="lazy" muted loop playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page" preload="none" poster="img/poster_sv_pc.jpg?v=noon169" data-poster-sp="img/poster_sv_sp.jpg?v=noon169" data-webm="video/sv_timelapse_pc.webm?v=noon169" data-mp4="video/sv_timelapse_pc.mp4?v=noon169" data-webm-sp="video/sv_timelapse_sp.webm?v=noon169" data-mp4-sp="video/sv_timelapse_sp.mp4?v=noon169" aria-label="1906からの眺望 朝から夜までのタイムラプス"></video>
     <div class="lbl">
       <p class="k">1906 — South View</p>
       <p class="t" data-i18n="t010">19階の南の窓に、<br>うめきたの緑と梅田の街</p>
