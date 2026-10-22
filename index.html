@@ -319,7 +319,8 @@ figcaption .d{display:none}
 .hero .media .poster{object-position:50% 34%}
 .pair img,.pair video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 @media (max-aspect-ratio:1/1){
-  .hero .media{aspect-ratio:5/4}
+  .hero .media{aspect-ratio:16/9}  /* 外観タイムラプスも横幅いっぱい・左右を切らない */
+  .hero .ov{padding-top:calc(12px + env(safe-area-inset-top))!important}.hero .cp{font-size:clamp(10.5px,2.9vw,13px)}.hero .no{font-size:clamp(30px,9vw,44px)}.hero h1{font-size:clamp(11.5px,3.3vw,15px);margin-top:2px}
   .hero .media2{aspect-ratio:16/9}  /* タイムラプスは横幅いっぱい・左右を切らない */
   .hero .media .poster{object-position:50% 50%}
   .pair img,.pair video{aspect-ratio:4/3}
@@ -347,10 +348,10 @@ html[lang="zh"] .hero .info .p small{display:none}
   <div class="price"><span style="font-size:11px;margin-right:6px" data-i18n="t079">販売価格</span><b data-i18n="t002">2億4,980万円</b></div>
 </div>
 
-<!-- HERO（hero1: 外観写真 / hero2: 1906 South View タイムラプス） -->
+<!-- HERO（hero1: 外観タイムラプス 昼→夕→夜 / hero2: 1906 South View タイムラプス） -->
 <header class="hero">
   <div class="media">
-    <img class="poster" id="heroPoster" src="img/hero_exterior.jpg" width="2000" height="1611" alt="グランフロント大阪オーナーズタワー 外観">
+    <video class="lazy" muted loop playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page" preload="none" poster="img/poster_hero_ext_pc.jpg?v=1" data-poster-sp="img/poster_hero_ext_sp.jpg?v=1" data-webm="video/hero_ext_pc.webm?v=1" data-mp4="video/hero_ext_pc.mp4?v=1" data-webm-sp="video/hero_ext_sp.webm?v=1" data-mp4-sp="video/hero_ext_sp.mp4?v=1" aria-label="グランフロント大阪オーナーズタワー 外観 昼から夜のタイムラプス"></video>
     <div class="ov">
       <p class="en">Grand Front Osaka — For Sale</p>
       <p class="cp" data-i18n="t003">うめきたの森を、眼下の庭に。</p>
