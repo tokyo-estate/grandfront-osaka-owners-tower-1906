@@ -4,7 +4,7 @@ site = os.path.abspath(sys.argv[1]); P = f'{site}/pdf'; os.makedirs(f'{P}/pages'
 for f in glob.glob(f'{P}/pages/*.jpg'): os.remove(f)
 counts = {}
 for l in ('ja', 'en', 'zh'):
-    subprocess.run(['pdftoppm', '-r', '130', '-jpeg', '-jpegopt', 'quality=80,progressive=y', f'{P}/1906_{l}.pdf', f'{P}/pages/{l}'], check=True)
+    subprocess.run(['pdftoppm', '-r', '200', '-jpeg', '-jpegopt', 'quality=88,progressive=y', f'{P}/1906_{l}.pdf', f'{P}/pages/{l}'], check=True)
     fs = sorted(glob.glob(f'{P}/pages/{l}-*.jpg')); counts[l] = len(fs)
     for i, f in enumerate(fs, 1): os.rename(f, f'{P}/pages/{l}-{i:02d}.jpg')
 L = {'ja': ['物件資料', 'PDFをダウンロード', 'サイトに戻る'], 'en': ['Brochure', 'Download PDF', 'Back to site'], 'zh': ['物业资料', '下载PDF', '返回网站']}
@@ -20,7 +20,7 @@ html = '''<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name=
 <script>var C=__C__,L=__L__,V="__V__";var l=(location.search.match(/[?&]lang=(ja|en|zh)/)||[])[1]||"ja";document.documentElement.lang=l;
 document.getElementById("tt").textContent="Grand Front Osaka Owners Tower — 1906　"+L[l][0];var dl=document.getElementById("dl");dl.href="1906_"+l+".pdf?"+V;dl.textContent=L[l][1];
 var bk=document.getElementById("back");bk.href="../?lang="+l;bk.title=L[l][2];
-var box=document.getElementById("pages");for(var i=1;i<=C[l];i++){var im=new Image();im.src="pages/"+l+"-"+(i<10?"0":"")+i+".jpg?"+V;im.alt=L[l][0]+" "+i;im.loading=i<=2?"eager":"lazy";im.width=1075;im.height=1520;box.appendChild(im);}</script></body></html>'''
+var box=document.getElementById("pages");for(var i=1;i<=C[l];i++){var im=new Image();im.src="pages/"+l+"-"+(i<10?"0":"")+i+".jpg?"+V;im.alt=L[l][0]+" "+i;im.loading=i<=2?"eager":"lazy";im.width=1654;im.height=2339;box.appendChild(im);}</script></body></html>'''
 V = sys.argv[2] if len(sys.argv) > 2 else 'v1'
 open(f'{P}/view.html', 'w', encoding='utf-8').write(html.replace('__C__', json.dumps(counts)).replace('__L__', json.dumps(L, ensure_ascii=False)).replace('__V__', V))
 print('viewer ok', counts)
