@@ -317,13 +317,13 @@ figcaption .d{display:none}
 }
 /* ---- グランフロント大阪1906: 静止画ヒーロー ---- */
 .hero .media .poster{object-position:50% 34%}
-.pair img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.pair img,.pair video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 @media (max-aspect-ratio:1/1){
   .hero .media{aspect-ratio:5/4}
   .hero .media .poster{object-position:50% 50%}
   .hero .media .scroll{display:flex;right:14px;bottom:14px;font-size:9px}
   .hero .media .scroll::after{height:36px}
-  .pair img{aspect-ratio:4/3}
+  .pair img,.pair video{aspect-ratio:4/3}
 }
 .bar .lang{display:flex;gap:9px;margin-left:auto;margin-right:12px;font-size:10px;letter-spacing:.12em;color:#cfc9bd;flex:0 0 auto;pointer-events:auto}
 .bar .lang a{cursor:pointer;opacity:.55;padding:6px 2px;border-bottom:1px solid transparent;-webkit-tap-highlight-color:transparent}
@@ -387,7 +387,7 @@ html[lang="zh"] .hero .info .p small{display:none}
 <!-- 住戸からの眺望（写真） -->
 <section class="pair">
   <div class="pv">
-    <img src="img/v01_view_park.jpg" width="1800" height="1344" loading="lazy" alt="1906からの眺望 うめきた公園方面">
+    <video class="lazy" muted loop playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page" preload="none" poster="img/poster_sv_pc.jpg" data-poster-sp="img/poster_sv_sp.jpg" data-webm="video/sv_timelapse_pc.webm" data-mp4="video/sv_timelapse_pc.mp4" data-webm-sp="video/sv_timelapse_sp.webm" data-mp4-sp="video/sv_timelapse_sp.mp4" aria-label="1906からの眺望 朝から夜までのタイムラプス"></video>
     <p class="k">1906 — South View</p>
   </div>
   <div class="cap">
