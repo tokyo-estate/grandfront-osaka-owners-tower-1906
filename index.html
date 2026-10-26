@@ -261,7 +261,7 @@ html[lang="en"] .ovl .o{letter-spacing:0;font-size:calc(var(--fs) * .86cqw)}
 @media (max-aspect-ratio:1/1){.close{min-height:calc(100vw * 4 / 3)}.close>picture>img,.close>img{object-position:50% 50%}}
 
 .close .in{position:relative;z-index:2}
-.pdfs{margin-top:34px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}.pdfs a{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border:1px solid var(--gold2);border-radius:999px;color:var(--gold2);font-size:12.5px;letter-spacing:.14em;text-decoration:none;background:rgba(0,0,0,.3);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.pdfs{margin-top:34px;display:flex;justify-content:center}.pdfs a{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border:1px solid var(--gold2);border-radius:999px;color:var(--gold2);font-size:12.5px;letter-spacing:.14em;text-decoration:none;background:rgba(0,0,0,.3);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 .close .en{font-size:11px;font-weight:500;letter-spacing:.36em;color:var(--gold2);text-transform:uppercase}
 .close h2{font-size:clamp(24px,6.4vw,44px);font-weight:300;letter-spacing:.12em;color:#fff;margin-top:14px;line-height:1.45}
 .close .p{color:#fff;margin-top:26px;letter-spacing:.14em;font-size:13px}
@@ -325,27 +325,29 @@ figcaption .d{display:none}
   .hero .media .poster{object-position:50% 50%}
   .pair img,.pair video{aspect-ratio:4/3}
 }
-.bar .lang{display:flex;gap:9px;margin-left:auto;margin-right:12px;font-size:10px;letter-spacing:.12em;color:#cfc9bd;flex:0 0 auto;pointer-events:auto}
-.bar .lang a{cursor:pointer;opacity:.55;padding:6px 2px;border-bottom:1px solid transparent;-webkit-tap-highlight-color:transparent}
-.bar .lang a.on{opacity:1;color:var(--gold2);border-bottom-color:var(--gold2)}
-.bar .brand{min-width:0}.bar .brand small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-html[lang="zh"] body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans JP",sans-serif}
-html[lang="en"] .movie .cap p,html[lang="zh"] .movie .cap p{max-width:720px}
-html[lang="en"] .hero h1{letter-spacing:.06em;font-size:clamp(18px,5vw,30px)}
-html[lang="zh"] .keys .v,html[lang="en"] .keys .v{white-space:nowrap;letter-spacing:-.02em}
-html[lang="zh"] .keys .v{font-size:clamp(24px,7vw,40px)}
-.pdfs a.on{background:rgba(201,169,98,.22)}
-html[lang="en"] .hero .info .spec,html[lang="zh"] .hero .info .spec{flex-wrap:wrap}
-html[lang="zh"] .hero .info .p small{display:none}
-@media (max-aspect-ratio:1/1){html[lang="en"] .hero .ov h1{font-size:clamp(12px,3.6vw,18px);letter-spacing:.06em}.hero .ov{padding-top:calc(44px + env(safe-area-inset-top))!important}.bar:not(.solid) .lang{position:absolute;right:12px;top:calc(10px + env(safe-area-inset-top));background:rgba(0,0,0,.42);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:0 12px;margin-right:0}.bar .lang{font-size:11.5px;gap:12px}.bar .lang a{padding:6px 2px}.bar{padding-left:14px;padding-right:14px}.bar .brand{flex:1 1 auto}.bar .brand small{white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-height:1.35;letter-spacing:.08em}.bar .lang{gap:10px;margin-left:10px;margin-right:10px}.bar .price span{display:none}.bar .price b{font-size:16px}.bar .price small{display:none}}
+.lbx-on figure:not([data-nolb]) img{cursor:zoom-in}
+.lbx-on figure:has(.ovl) img{cursor:auto}
+.lbx{position:fixed;inset:0;z-index:200;background:rgba(6,7,9,.96);display:none;overflow:hidden;touch-action:none;-webkit-user-select:none;user-select:none}
+.lbx.on{display:block}
+.lbx .tr{position:absolute;inset:0;display:flex;will-change:transform}
+.lbx .tr.an{transition:transform .32s cubic-bezier(.2,.7,.2,1)}
+.lbx .sl{flex:0 0 100%;height:100%;display:flex;align-items:center;justify-content:center;padding:calc(54px + env(safe-area-inset-top)) 0 calc(70px + env(safe-area-inset-bottom))}
+.lbx .sl img{max-width:100%;max-height:100%;object-fit:contain;display:block;-webkit-user-drag:none;pointer-events:none}
+.lbx button{position:absolute;background:none;border:0;color:#fff;cursor:pointer;font-family:inherit;line-height:1;padding:12px;opacity:.85}
+.lbx button:hover{opacity:1}
+.lbx .x{top:calc(4px + env(safe-area-inset-top));right:6px;font-size:34px;font-weight:200}
+.lbx .pv,.lbx .nx{top:50%;transform:translateY(-50%);font-size:46px;font-weight:200;display:none}
+.lbx .pv{left:8px}.lbx .nx{right:8px}
+.lbx .cp{position:absolute;left:0;right:0;bottom:0;padding:14px 20px calc(18px + env(safe-area-inset-bottom));text-align:center;font-size:13px;letter-spacing:.08em;color:#e8e4dc;pointer-events:none}
+.lbx .cp .n{display:block;margin-top:4px;font-size:11px;color:var(--gold2);letter-spacing:.2em}
+@media (hover:hover) and (min-width:700px){.lbx .pv,.lbx .nx{display:block}.lbx .sl{padding-left:72px;padding-right:72px}.lbx .pv[disabled],.lbx .nx[disabled]{opacity:.15;cursor:default}}
 </style>
 </head>
 <body>
 
 <div class="bar" id="bar">
-  <div class="brand"><span class="pc">GRAND FRONT OSAKA OWNERS TOWER</span><small data-i18n="t001">グランフロント大阪 オーナーズタワー　1906</small></div>
-  <div class="lang" id="lang"><a data-lang="ja">JA</a><a data-lang="en">EN</a><a data-lang="zh">中文</a></div>
-  <div class="price"><span style="font-size:11px;margin-right:6px" data-i18n="t079">販売価格</span><b data-i18n="t002">2億4,980万円</b></div>
+  <div class="brand"><span class="pc">GRAND FRONT OSAKA OWNERS TOWER</span><small>グランフロント大阪 オーナーズタワー　1906</small></div>
+  <div class="price"><span style="font-size:11px;margin-right:6px">販売価格</span><b>2億4,980万円</b></div>
 </div>
 
 <!-- HERO（hero1: 外観タイムラプス 昼→夕→夜 / hero2: 1906 South View タイムラプス） -->
@@ -354,13 +356,13 @@ html[lang="zh"] .hero .info .p small{display:none}
     <video class="lazy" muted loop playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page" preload="none" poster="img/poster_hero_ext_pc.jpg?v=2" data-poster-sp="img/poster_hero_ext_sp.jpg?v=4" data-webm="video/hero_ext_pc.webm?v=1" data-mp4="video/hero_ext_pc.mp4?v=1" data-webm-sp="video/hero_ext_sp.webm?v=4" data-mp4-sp="video/hero_ext_sp.mp4?v=4" aria-label="グランフロント大阪オーナーズタワー 外観 昼から夜のタイムラプス"></video>
     <div class="ov">
       <p class="en">Grand Front Osaka — For Sale</p>
-      <p class="cp" data-i18n="t003">うめきたの森を、眼下の庭に。</p>
+      <p class="cp">うめきたの森を、眼下の庭に。</p>
       <p class="no">1906<small>19F</small></p>
-      <h1 data-i18n="t004">グランフロント大阪<br class="pc"> オーナーズタワー</h1>
+      <h1>グランフロント大阪<br class="pc"> オーナーズタワー</h1>
       <ul class="spec">
-      <li data-i18n="t005">19階 南向き</li><li>2LDK</li><li data-i18n="t006">専有 81.94㎡</li><li data-i18n="t007">JR大阪駅 徒歩6分</li><li data-i18n="t008">空室</li>
+      <li>19階 南向き</li><li>2LDK</li><li>専有 81.94㎡</li><li>JR大阪駅 徒歩6分</li><li>空室</li>
     </ul>
-    <p class="p" data-i18n="t009"><span data-i18n="t079">販売価格</span><b data-i18n="t002">2億4,980万円</b></p>
+    <p class="p"><span>販売価格</span><b>2億4,980万円</b></p>
     </div>
     <div class="scroll">SCROLL</div>
   </div>
@@ -368,15 +370,15 @@ html[lang="zh"] .hero .info .p small{display:none}
     <video class="lazy" muted loop playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page" preload="none" poster="img/poster_sv_pc.jpg?v=noon169b" data-poster-sp="img/poster_sv_sp.jpg?v=sv169c" data-webm="video/sv_timelapse_pc.webm?v=noon169" data-mp4="video/sv_timelapse_pc.mp4?v=noon169" data-webm-sp="video/sv_timelapse_sp.webm?v=noon169" data-mp4-sp="video/sv_timelapse_sp.mp4?v=noon169" aria-label="1906からの眺望 朝から夜までのタイムラプス"></video>
     <div class="lbl">
       <p class="k">1906 — South View</p>
-      <p class="t" data-i18n="t010">19階の南の窓に、<br>うめきたの緑と梅田の街</p>
-      <p class="d" data-i18n="t011">グラングリーン大阪の公園と、<br>梅田のスカイライン。リビングの窓から。</p>
+      <p class="t">19階の南の窓に、<br>うめきたの緑と梅田の街</p>
+      <p class="d">グラングリーン大阪の公園と、<br>梅田のスカイライン。リビングの窓から。</p>
     </div>
     <div class="scroll sc2">SCROLL</div>
   </div>
   <div class="info">
-    <div class="r1"><p class="t2"><b>1906</b><small>19F</small></p><p class="p" data-i18n="t009"><span data-i18n="t079">販売価格</span><b data-i18n="t002">2億4,980万円</b></p></div>
+    <div class="r1"><p class="t2"><b>1906</b><small>19F</small></p><p class="p"><span>販売価格</span><b>2億4,980万円</b></p></div>
     <ul class="spec">
-      <li data-i18n="t012">南向き</li><li>2LDK</li><li>81.94㎡</li><li data-i18n="t007">JR大阪駅 徒歩6分</li><li data-i18n="t008">空室</li>
+      <li>南向き</li><li>2LDK</li><li>81.94㎡</li><li>JR大阪駅 徒歩6分</li><li>空室</li>
     </ul>
   </div>
 </header>
@@ -387,9 +389,9 @@ html[lang="zh"] .hero .info .p small{display:none}
     <li><div class="v">19<small>F</small></div><div class="k">Floor</div></li>
     <li><div class="v">81.94<small>㎡</small></div><div class="k">Area</div></li>
     <li><div class="v">2<small>LDK</small></div><div class="k">Plan</div></li>
-    <li><div class="v" data-i18n="t013">南<small data-i18n="t014">向き</small></div><div class="k">Aspect</div></li>
-    <li><div class="v" data-i18n="t015">525<small data-i18n="t016">戸</small></div><div class="k">Residences</div></li>
-    <li><div class="v" data-i18n="t017">6<small data-i18n="t018">分</small></div><div class="k" data-i18n="t019">JR大阪駅 徒歩</div></li>
+    <li><div class="v">南<small>向き</small></div><div class="k">Aspect</div></li>
+    <li><div class="v">525<small>戸</small></div><div class="k">Residences</div></li>
+    <li><div class="v">6<small>分</small></div><div class="k">JR大阪駅 徒歩</div></li>
   </ul>
 </div>
 
@@ -398,16 +400,16 @@ html[lang="zh"] .hero .info .p small{display:none}
 <section class="light plan-top">
   <div class="wrap">
     <div class="plan-grid">
-      <figure class="box rv zoom"><img src="img/u00_plan3d.jpg?v=20261021" width="1600" height="1600" loading="lazy" alt="3D間取図"><figcaption><span class="t" data-i18n="t020">3D間取図</span><span class="d" data-i18n="t021">　家具はイメージです</span></figcaption></figure>
+      <figure class="box rv zoom"><img src="img/u00_plan3d.jpg?v=20261021" width="1600" height="1600" loading="lazy" alt="3D間取図"><figcaption><span class="t">3D間取図</span><span class="d">　家具はイメージです</span></figcaption></figure>
       <div class="meta rv">
         <div class="head" style="margin:0">
           <p class="no">01 — Floor Plan</p>
-          <h2 data-i18n="t022">19階、南向きの<br>2LDK</h2>
+          <h2>19階、南向きの<br>2LDK</h2>
         </div>
         <div class="big">81.94<small>㎡</small></div>
-        <p data-i18n="t023">約15.3帖のパーラーダイニングを<br>2つの洋室がはさむ、<br>すべての居室が南を向く間取り。<br>ウォークインクローゼットと<br>大理石の玄関ホール。</p>
+        <p>約15.3帖のパーラーダイニングを<br>2つの洋室がはさむ、<br>すべての居室が南を向く間取り。<br>ウォークインクローゼットと<br>大理石の玄関ホール。</p>
         <ul class="chips">
-          <li data-i18n="t024">LD 約15.3帖</li><li data-i18n="t025">キッチン 約3.9帖</li><li data-i18n="t026">洋室(1) 約7.5帖</li><li data-i18n="t027">洋室(2) 約7.1帖</li><li>WIC</li><li data-i18n="t028">パウダールーム</li><li data-i18n="t029">浴室</li><li data-i18n="t030">バルコニー 8.94㎡</li>
+          <li>LD 約15.3帖</li><li>キッチン 約3.9帖</li><li>洋室(1) 約7.5帖</li><li>洋室(2) 約7.1帖</li><li>WIC</li><li>パウダールーム</li><li>浴室</li><li>バルコニー 8.94㎡</li>
         </ul>
       </div>
     </div>
@@ -420,15 +422,15 @@ html[lang="zh"] .hero .info .p small{display:none}
   <div class="wrap">
     <div class="head rv">
       <p class="no">02 — View</p>
-      <h2 data-i18n="t031">グラングリーン大阪を、<br>見下ろす高さ</h2>
-      <p class="lead" data-i18n="t032">南の窓の正面に、うめきた公園の緑と梅田のビル群。朝日から夜景まで、2024年に先行まちびらきしたグラングリーン大阪を19階から一望します。</p>
+      <h2>グラングリーン大阪を、<br>見下ろす高さ</h2>
+      <p class="lead">南の窓の正面に、うめきた公園の緑と梅田のビル群。朝日から夜景まで、2024年に先行まちびらきしたグラングリーン大阪を19階から一望します。</p>
     </div>
     <div class="stack">
       <div class="grid grid-2 grid-d2 rv">
-        <figure class="zoom"><img src="img/v11_view_morning.jpg" width="1800" height="1344" loading="lazy" alt="朝の眺望"><figcaption><span class="t" data-i18n="t033">朝　朝日に染まるビル群</span></figcaption></figure>
-        <figure class="zoom" data-pdf-first><img src="img/v12_view_noon.jpg" width="1800" height="1344" loading="lazy" alt="昼の眺望"><figcaption><span class="t" data-i18n="t034">昼　晴天の公園と梅田</span></figcaption></figure>
-        <figure class="zoom"><img src="img/v13_view_sunset.jpg" width="1800" height="1344" loading="lazy" alt="夕焼けの眺望"><figcaption><span class="t" data-i18n="t035">夕　夕焼けの空</span></figcaption></figure>
-        <figure class="zoom"><img src="img/v14_view_night.jpg" width="1800" height="1344" loading="lazy" alt="夜景"><figcaption><span class="t" data-i18n="t036">夜　灯りがともる梅田</span></figcaption></figure>
+        <figure class="zoom"><img src="img/v11_view_morning.jpg" width="1800" height="1344" loading="lazy" alt="朝の眺望"><figcaption><span class="t">朝　朝日に染まるビル群</span></figcaption></figure>
+        <figure class="zoom" data-pdf-first><img src="img/v12_view_noon.jpg" width="1800" height="1344" loading="lazy" alt="昼の眺望"><figcaption><span class="t">昼　晴天の公園と梅田</span></figcaption></figure>
+        <figure class="zoom"><img src="img/v13_view_sunset.jpg" width="1800" height="1344" loading="lazy" alt="夕焼けの眺望"><figcaption><span class="t">夕　夕焼けの空</span></figcaption></figure>
+        <figure class="zoom"><img src="img/v14_view_night.jpg" width="1800" height="1344" loading="lazy" alt="夜景"><figcaption><span class="t">夜　灯りがともる梅田</span></figcaption></figure>
       </div>
     </div>
   </div>
@@ -439,20 +441,20 @@ html[lang="zh"] .hero .info .p small{display:none}
   <div class="wrap">
     <div class="head rv">
       <p class="no">03 — Interior</p>
-      <h2 data-i18n="t037">濃色の床と石が映える、<br>2LDKの室内</h2>
-      <p class="lead" data-i18n="t038">LD約15.3帖・キッチン約3.9帖、<br>洋室は約7.5帖と約7.1帖の2室。<br>玄関ホールは大理石張り。</p>
+      <h2>濃色の床と石が映える、<br>2LDKの室内</h2>
+      <p class="lead">LD約15.3帖・キッチン約3.9帖、<br>洋室は約7.5帖と約7.1帖の2室。<br>玄関ホールは大理石張り。</p>
     </div>
     <div class="grid grid-2 grid-d2 rv">
-      <figure class="zoom"><img src="img/u01_ld1.jpg" width="1344" height="1800" loading="lazy" alt="リビングダイニング"><figcaption><span class="t" data-i18n="t039">リビングダイニング</span></figcaption></figure>
-      <figure class="zoom" data-pdf-skip><img src="img/u03_ld3_window.jpg" width="1344" height="1800" loading="lazy" alt="窓側から見たLD"><figcaption><span class="t" data-i18n="t040">窓側から見たLD</span></figcaption></figure>
-      <figure class="zoom"><img src="img/u02_ld2.jpg" width="1344" height="1800" loading="lazy" alt="リビングダイニング"><figcaption><span class="t" data-i18n="t024">LD 約15.3帖</span></figcaption></figure>
-      <figure class="zoom"><img src="img/u04_kitchen.jpg" width="1344" height="1800" loading="lazy" alt="キッチン"><figcaption><span class="t" data-i18n="t025">キッチン 約3.9帖</span></figcaption></figure>
-      <figure class="zoom"><img src="img/u06_bed2_corner.jpg" width="1800" height="1344" loading="lazy" alt="洋室の窓"><figcaption><span class="t" data-i18n="t041">洋室の窓から</span></figcaption></figure>
-      <figure class="zoom"><img src="img/u09_washroom.jpg" width="1800" height="1344" loading="lazy" alt="パウダールーム"><figcaption><span class="t" data-i18n="t028">パウダールーム</span></figcaption></figure>
-      <figure class="zoom"><img src="img/u05_bed1.jpg" width="1344" height="1800" loading="lazy" alt="洋室"><figcaption><span class="t" data-i18n="t042">洋室</span></figcaption></figure>
-      <figure class="zoom"><img src="img/u10_bath.jpg" width="1344" height="1800" loading="lazy" alt="浴室"><figcaption><span class="t" data-i18n="t029">浴室</span></figcaption></figure>
-      <figure class="zoom"><img src="img/u07_wic.jpg" width="1344" height="1800" loading="lazy" alt="ウォークインクローゼット"><figcaption><span class="t" data-i18n="t043">ウォークインクローゼット</span></figcaption></figure>
-      <figure class="zoom"><img src="img/u08_entrance.jpg" width="1344" height="1800" loading="lazy" alt="大理石の玄関ホール"><figcaption><span class="t" data-i18n="t044">大理石の玄関ホール</span></figcaption></figure>
+      <figure class="zoom"><img src="img/u01_ld1.jpg" width="1344" height="1800" loading="lazy" alt="リビングダイニング"><figcaption><span class="t">リビングダイニング</span></figcaption></figure>
+      <figure class="zoom" data-pdf-skip><img src="img/u03_ld3_window.jpg" width="1344" height="1800" loading="lazy" alt="窓側から見たLD"><figcaption><span class="t">窓側から見たLD</span></figcaption></figure>
+      <figure class="zoom"><img src="img/u02_ld2.jpg" width="1344" height="1800" loading="lazy" alt="リビングダイニング"><figcaption><span class="t">LD 約15.3帖</span></figcaption></figure>
+      <figure class="zoom"><img src="img/u04_kitchen.jpg" width="1344" height="1800" loading="lazy" alt="キッチン"><figcaption><span class="t">キッチン 約3.9帖</span></figcaption></figure>
+      <figure class="zoom"><img src="img/u06_bed2_corner.jpg" width="1800" height="1344" loading="lazy" alt="洋室の窓"><figcaption><span class="t">洋室の窓から</span></figcaption></figure>
+      <figure class="zoom"><img src="img/u09_washroom.jpg" width="1800" height="1344" loading="lazy" alt="パウダールーム"><figcaption><span class="t">パウダールーム</span></figcaption></figure>
+      <figure class="zoom"><img src="img/u05_bed1.jpg" width="1344" height="1800" loading="lazy" alt="洋室"><figcaption><span class="t">洋室</span></figcaption></figure>
+      <figure class="zoom"><img src="img/u10_bath.jpg" width="1344" height="1800" loading="lazy" alt="浴室"><figcaption><span class="t">浴室</span></figcaption></figure>
+      <figure class="zoom"><img src="img/u07_wic.jpg" width="1344" height="1800" loading="lazy" alt="ウォークインクローゼット"><figcaption><span class="t">ウォークインクローゼット</span></figcaption></figure>
+      <figure class="zoom"><img src="img/u08_entrance.jpg" width="1344" height="1800" loading="lazy" alt="大理石の玄関ホール"><figcaption><span class="t">大理石の玄関ホール</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -462,22 +464,22 @@ html[lang="zh"] .hero .info .p small{display:none}
   <div class="wrap">
     <div class="head rv">
       <p class="no">04 — Facilities</p>
-      <h2 data-i18n="t045">ホテルのような、<br>迎えの空間</h2>
-      <p class="lead" data-i18n="t046">淀川を望む35階のスカイラウンジ。<br>暖炉のあるラウンジと、<br class="sp">天井の高いロビー。<br>24時間の有人管理とコンシェルジュ。</p>
+      <h2>ホテルのような、<br>迎えの空間</h2>
+      <p class="lead">淀川を望む35階のスカイラウンジ。<br>暖炉のあるラウンジと、<br class="sp">天井の高いロビー。<br>24時間の有人管理とコンシェルジュ。</p>
     </div>
     <div class="grid grid-2 grid-d3 rv">
-        <figure class="zoom"><img src="img/c03_skylounge2.jpg" width="1344" height="1800" loading="lazy" alt="スカイラウンジ"><figcaption><span class="t" data-i18n="t047">35F スカイラウンジ</span></figcaption></figure>
-        <figure class="zoom"><img src="img/c04_skylounge1.jpg" width="1800" height="1344" loading="lazy" alt="スカイラウンジ ダイニング"><figcaption><span class="t" data-i18n="t048">35F ラウンジのダイニング</span></figcaption></figure>
-        <figure class="zoom"><img src="img/c01_skylounge_view1.jpg" width="1800" height="1344" loading="lazy" alt="スカイラウンジからの眺望"><figcaption><span class="t" data-i18n="t049">35F 淀川方面の眺望</span></figcaption></figure>
-        <figure class="zoom"><img src="img/c05_lounge_void.jpg" width="1344" height="1800" loading="lazy" alt="吹き抜けのラウンジ"><figcaption><span class="t" data-i18n="t050">吹き抜けのラウンジ</span></figcaption></figure>
-        <figure class="zoom"><img src="img/c06_lounge_reception.jpg" width="1800" height="1344" loading="lazy" alt="ラウンジ"><figcaption><span class="t" data-i18n="t051">緑を望むラウンジ</span></figcaption></figure>
-        <figure class="zoom"><img src="img/c07_lounge.jpg" width="1800" height="1205" loading="lazy" alt="ラウンジ"><figcaption><span class="t" data-i18n="t052">ラウンジ</span></figcaption></figure>
-        <figure class="zoom"><img src="img/c08_lobby1.jpg" width="1800" height="1152" loading="lazy" alt="ロビー"><figcaption><span class="t" data-i18n="t053">ロビー</span></figcaption></figure>
-        <figure class="zoom"><img src="img/c09_lobby2.jpg" width="1800" height="1197" loading="lazy" alt="ロビー"><figcaption><span class="t" data-i18n="t053">ロビー</span></figcaption></figure>
-        <figure class="zoom"><img src="img/c10_lobby3.jpg" width="1216" height="912" loading="lazy" alt="ロビー"><figcaption><span class="t" data-i18n="t054">シャンデリアのロビー</span></figcaption></figure>
-        <figure class="zoom"><img src="img/c13_evhall2.jpg" width="1020" height="1368" loading="lazy" alt="エレベーターホール"><figcaption><span class="t" data-i18n="t055">エレベーターホール</span></figcaption></figure>
-        <figure class="zoom"><img src="img/c12_evhall1.jpg" width="762" height="508" loading="lazy" alt="内廊下"><figcaption><span class="t" data-i18n="t056">ホテルライクな内廊下</span></figcaption></figure>
-        <figure class="zoom"><img src="img/u11_door.jpg" width="1344" height="1800" loading="lazy" alt="1906 玄関"><figcaption><span class="t" data-i18n="t057">住戸の玄関</span></figcaption></figure>
+        <figure class="zoom"><img src="img/c03_skylounge2.jpg" width="1344" height="1800" loading="lazy" alt="スカイラウンジ"><figcaption><span class="t">35F スカイラウンジ</span></figcaption></figure>
+        <figure class="zoom"><img src="img/c04_skylounge1.jpg" width="1800" height="1344" loading="lazy" alt="スカイラウンジ ダイニング"><figcaption><span class="t">35F ラウンジのダイニング</span></figcaption></figure>
+        <figure class="zoom"><img src="img/c01_skylounge_view1.jpg" width="1800" height="1344" loading="lazy" alt="スカイラウンジからの眺望"><figcaption><span class="t">35F 淀川方面の眺望</span></figcaption></figure>
+        <figure class="zoom"><img src="img/c05_lounge_void.jpg" width="1344" height="1800" loading="lazy" alt="吹き抜けのラウンジ"><figcaption><span class="t">吹き抜けのラウンジ</span></figcaption></figure>
+        <figure class="zoom"><img src="img/c06_lounge_reception.jpg" width="1800" height="1344" loading="lazy" alt="ラウンジ"><figcaption><span class="t">緑を望むラウンジ</span></figcaption></figure>
+        <figure class="zoom"><img src="img/c07_lounge.jpg" width="1800" height="1205" loading="lazy" alt="ラウンジ"><figcaption><span class="t">ラウンジ</span></figcaption></figure>
+        <figure class="zoom"><img src="img/c08_lobby1.jpg" width="1800" height="1152" loading="lazy" alt="ロビー"><figcaption><span class="t">ロビー</span></figcaption></figure>
+        <figure class="zoom"><img src="img/c09_lobby2.jpg" width="1800" height="1197" loading="lazy" alt="ロビー"><figcaption><span class="t">ロビー</span></figcaption></figure>
+        <figure class="zoom"><img src="img/c10_lobby3.jpg" width="1216" height="912" loading="lazy" alt="ロビー"><figcaption><span class="t">シャンデリアのロビー</span></figcaption></figure>
+        <figure class="zoom"><img src="img/c13_evhall2.jpg" width="1020" height="1368" loading="lazy" alt="エレベーターホール"><figcaption><span class="t">エレベーターホール</span></figcaption></figure>
+        <figure class="zoom"><img src="img/c12_evhall1.jpg" width="762" height="508" loading="lazy" alt="内廊下"><figcaption><span class="t">ホテルライクな内廊下</span></figcaption></figure>
+        <figure class="zoom"><img src="img/u11_door.jpg" width="1344" height="1800" loading="lazy" alt="1906 玄関"><figcaption><span class="t">住戸の玄関</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -487,13 +489,13 @@ html[lang="zh"] .hero .info .p small{display:none}
   <div class="wrap">
     <div class="head rv">
       <p class="no">05 — Location</p>
-      <h2 data-i18n="t058">大阪駅のとなり、<br>うめきたの森に住む</h2>
-      <p class="lead" data-i18n="t059">グランフロント大阪の北側、<br>うめきたの再開発エリア。<br>2024年9月に先行まちびらきした<br>グラングリーン大阪の公園がすぐそば。<br>JR大阪駅まで徒歩6分です。</p>
+      <h2>大阪駅のとなり、<br>うめきたの森に住む</h2>
+      <p class="lead">グランフロント大阪の北側、<br>うめきたの再開発エリア。<br>2024年9月に先行まちびらきした<br>グラングリーン大阪の公園がすぐそば。<br>JR大阪駅まで徒歩6分です。</p>
     </div>
     <ul class="times rv">
-      <li><div class="to" data-i18n="x001">JR「大阪」駅</div><div class="m" data-i18n="t017">6<small data-i18n="t018">分</small></div></li>
+      <li><div class="to">JR「大阪」駅</div><div class="m">6<small>分</small></div></li>
     </ul>
-    <p class="note dk" data-i18n="t060">※徒歩分数です。</p>
+    <p class="note dk">※徒歩分数です。</p>
   </div>
 </section>
 
@@ -502,16 +504,16 @@ html[lang="zh"] .hero .info .p small{display:none}
   <div class="wrap">
     <div class="head rv">
       <p class="no">06 — Structure &amp; Management</p>
-      <h2 data-i18n="t061">免震構造と、<br>確かな管理</h2>
-      <p class="lead" data-i18n="t062">地上48階の免震タワー。<br>24時間の有人管理と、<br>健全な修繕積立金の蓄え。</p>
+      <h2>免震構造と、<br>確かな管理</h2>
+      <p class="lead">地上48階の免震タワー。<br>24時間の有人管理と、<br>健全な修繕積立金の蓄え。</p>
     </div>
     <ul class="floors rv">
-      <li data-f="SEISMIC"><p class="f">Base Isolation</p><p class="n" data-i18n="t063">免震構造</p><p class="d" data-i18n="t064">SRC造 地上48階・地下1階</p></li>
-      <li data-f="24H"><p class="f">Security</p><p class="n" data-i18n="t065">24時間有人管理</p><p class="d" data-i18n="t066">コンシェルジュ・内廊下・オートロック</p></li>
-      <li data-f="RESERVE"><p class="f">Reserve</p><p class="n" data-i18n="t067">修繕積立金 約13.3億円</p><p class="d" data-i18n="t068">借入金0円（2024年7月末時点）</p></li>
-      <li data-f="PET"><p class="f">Pet</p><p class="n" data-i18n="t069">ペット飼育可</p><p class="d" data-i18n="t070">ペット飼育細則による</p></li>
-      <li data-f="2013"><p class="f">Completed</p><p class="n" data-i18n="t071">2013年3月竣工</p><p class="d" data-i18n="t072">施工 大林組・竹中工務店</p></li>
-      <li data-f="525"><p class="f">Residences</p><p class="n" data-i18n="t073">総戸数 525戸</p><p class="d" data-i18n="t074">管理 三菱地所コミュニティ</p></li>
+      <li data-f="SEISMIC"><p class="f">Base Isolation</p><p class="n">免震構造</p><p class="d">SRC造 地上48階・地下1階</p></li>
+      <li data-f="24H"><p class="f">Security</p><p class="n">24時間有人管理</p><p class="d">コンシェルジュ・内廊下・オートロック</p></li>
+      <li data-f="RESERVE"><p class="f">Reserve</p><p class="n">修繕積立金 約13.3億円</p><p class="d">借入金0円（2024年7月末時点）</p></li>
+      <li data-f="PET"><p class="f">Pet</p><p class="n">ペット飼育可</p><p class="d">ペット飼育細則による</p></li>
+      <li data-f="2013"><p class="f">Completed</p><p class="n">2013年3月竣工</p><p class="d">施工 大林組・竹中工務店</p></li>
+      <li data-f="525"><p class="f">Residences</p><p class="n">総戸数 525戸</p><p class="d">管理 三菱地所コミュニティ</p></li>
     </ul>
   </div>
 </section>
@@ -521,33 +523,33 @@ html[lang="zh"] .hero .info .p small{display:none}
   <div class="wrap" style="padding-top:80px">
     <div class="head rv">
       <p class="no">07 — Outline</p>
-      <h2 data-i18n="t075">販売概要・物件概要</h2>
+      <h2>販売概要・物件概要</h2>
     </div>
     <div class="grid grid-d2 rv" style="align-items:start">
-      <figure style="background:#fff;padding:14px;border:1px solid #e4dfd6"><img class="ar-auto" src="img/u00_plan2d.jpg" width="1600" height="1600" loading="lazy" alt="間取図 80Dタイプ"><figcaption><span class="t" data-i18n="t076">間取図</span><span class="d">　2LDK（81.94㎡）</span></figcaption></figure>
+      <figure style="background:#fff;padding:14px;border:1px solid #e4dfd6"><img class="ar-auto" src="img/u00_plan2d.jpg" width="1600" height="1600" loading="lazy" alt="間取図 80Dタイプ"><figcaption><span class="t">間取図</span><span class="d">　2LDK（81.94㎡）</span></figcaption></figure>
       <div>
         <table class="tbl">
-          <tr><th data-i18n="t077">物件名</th><td data-i18n="t078">グランフロント大阪<br>オーナーズタワー　1906号室</td></tr>
-          <tr><th data-i18n="t079">販売価格</th><td data-i18n="t080"><b data-i18n="t002">2億4,980万円</b></td></tr>
-          <tr><th data-i18n="t081">管理費</th><td data-i18n="t082">24,580円／月</td></tr>
-          <tr><th data-i18n="t083">修繕積立金</th><td data-i18n="t084">8,190円／月</td></tr>
-          <tr><th data-i18n="t085">その他費用</th><td data-i18n="t086">窓ガラス清掃費 300円／月</td></tr>
-          <tr><th data-i18n="t087">現況</th><td data-i18n="t008">空室</td></tr>
-          <tr><th data-i18n="t088">引渡し</th><td data-i18n="t089">即時（現況渡し）</td></tr>
-          <tr><th data-i18n="t090">所在地</th><td data-i18n="t091">大阪府大阪市北区大深町3-40</td></tr>
-          <tr><th data-i18n="t092">交通</th><td data-i18n="t093">JR「大阪」駅 徒歩6分</td></tr>
-          <tr><th data-i18n="t094">所在階</th><td data-i18n="t095">19階（南向き）</td></tr>
-          <tr><th data-i18n="t096">間取り</th><td data-i18n="t097">2LDK（80Dタイプ）</td></tr>
-          <tr><th data-i18n="t098">専有面積</th><td data-i18n="t099">81.94㎡（壁芯）／登記 79.47㎡<br>バルコニー 8.94㎡</td></tr>
-          <tr><th data-i18n="t100">構造・規模</th><td data-i18n="t101">鉄骨鉄筋コンクリート造<br>地上48階・地下1階建（免震構造）</td></tr>
-          <tr><th data-i18n="t102">総戸数</th><td data-i18n="t103">525戸</td></tr>
-          <tr><th data-i18n="t104">竣工</th><td data-i18n="t105">2013年3月</td></tr>
-          <tr><th data-i18n="t106">施工</th><td data-i18n="t107">大林組・竹中工務店</td></tr>
-          <tr><th data-i18n="t108">管理</th><td data-i18n="t109">三菱地所コミュニティ</td></tr>
-          <tr><th data-i18n="t110">駐車場</th><td data-i18n="t111">敷地内 月35,000〜68,000円<br>（空き状況は要確認）</td></tr>
+          <tr><th>物件名</th><td>グランフロント大阪<br>オーナーズタワー　1906号室</td></tr>
+          <tr><th>販売価格</th><td><b>2億4,980万円</b></td></tr>
+          <tr><th>管理費</th><td>24,580円／月</td></tr>
+          <tr><th>修繕積立金</th><td>8,190円／月</td></tr>
+          <tr><th>その他費用</th><td>窓ガラス清掃費 300円／月</td></tr>
+          <tr><th>現況</th><td>空室</td></tr>
+          <tr><th>引渡し</th><td>即時（現況渡し）</td></tr>
+          <tr><th>所在地</th><td>大阪府大阪市北区大深町3-40</td></tr>
+          <tr><th>交通</th><td>JR「大阪」駅 徒歩6分</td></tr>
+          <tr><th>所在階</th><td>19階（南向き）</td></tr>
+          <tr><th>間取り</th><td>2LDK（80Dタイプ）</td></tr>
+          <tr><th>専有面積</th><td>81.94㎡（壁芯）／登記 79.47㎡<br>バルコニー 8.94㎡</td></tr>
+          <tr><th>構造・規模</th><td>鉄骨鉄筋コンクリート造<br>地上48階・地下1階建（免震構造）</td></tr>
+          <tr><th>総戸数</th><td>525戸</td></tr>
+          <tr><th>竣工</th><td>2013年3月</td></tr>
+          <tr><th>施工</th><td>大林組・竹中工務店</td></tr>
+          <tr><th>管理</th><td>三菱地所コミュニティ</td></tr>
+          <tr><th>駐車場</th><td>敷地内 月35,000〜68,000円<br>（空き状況は要確認）</td></tr>
         </table>
-        <p class="note" data-i18n="t112">※販売価格・管理費等は2026年10月現在のものです。最新の販売状況はお問い合わせください。</p>
-        <p class="note" data-i18n="t113">※3D間取図の家具はイメージです。現況は空室です。</p>
+        <p class="note">※販売価格・管理費等は2026年10月現在のものです。最新の販売状況はお問い合わせください。</p>
+        <p class="note">※3D間取図の家具はイメージです。現況は空室です。</p>
       </div>
     </div>
   </div>
@@ -558,21 +560,17 @@ html[lang="zh"] .hero .info .p small{display:none}
   <img src="img/l01_waterside_real.jpg" width="2000" height="1493" loading="lazy" alt="">
   <div class="in">
     <p class="en rv">Grand Front Osaka Owners Tower — 1906</p>
-    <h2 class="rv" data-i18n="t114">大阪の真ん中で、<br>緑と空を、毎日の景色に。</h2>
-    <p class="p rv" data-i18n="t115">販売価格<b data-i18n="t002">2億4,980万円</b></p>
+    <h2 class="rv">大阪の真ん中で、<br>緑と空を、毎日の景色に。</h2>
+    <p class="p rv">販売価格<b>2億4,980万円</b></p>
     <ul class="rv">
-      <li data-i18n="t005">19階 南向き</li><li>2LDK</li><li>81.94㎡</li><li data-i18n="t007">JR大阪駅 徒歩6分</li><li data-i18n="t008">空室</li>
+      <li>19階 南向き</li><li>2LDK</li><li>81.94㎡</li><li>JR大阪駅 徒歩6分</li><li>空室</li>
     </ul>
-    <div class="pdfs rv" id="pdfs">
-      <a href="pdf/view.html?lang=ja&v=20261023a" data-pdf="ja" target="_blank" rel="noopener">日本語 PDF</a>
-      <a href="pdf/view.html?lang=en&v=20261023a" data-pdf="en" target="_blank" rel="noopener">English PDF</a>
-      <a href="pdf/view.html?lang=zh&v=20261023a" data-pdf="zh" target="_blank" rel="noopener">中文 PDF</a>
-    </div>
+    <div class="pdfs rv"><a href="pdf/1906_ja.pdf" target="_blank" rel="noopener">PDFで見る</a></div>
   </div>
 </section>
 
 <footer>
-  <p data-i18n="t116">※画像の一部は、実写をもとにAIで色調・天候・植栽を調整したイメージです。掲載内容は2026年10月現在のものです。</p>
+  <p>※画像の一部は、実写をもとにAIで色調・天候・植栽を調整したイメージです。掲載内容は2026年10月現在のものです。</p>
 </footer>
 
 <script>
@@ -604,28 +602,57 @@ html[lang="zh"] .hero .info .p small{display:none}
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 })();
 </script>
-
+<!-- lightbox -->
 <script>
-var I18N={"en": {"x001": "JR Osaka Sta.", "t059": "On the north side of Grand Front Osaka,<br>in the Umekita redevelopment area.<br>The park at Grand Green Osaka,<br>which opened in September 2024, is right nearby.<br>JR Osaka Station is a 6-minute walk.", "t023": "A 15.3-jo parlour dining room<br>between two bedrooms,<br>with every room facing south.<br>A walk-in closet<br>and a marble entrance hall.", "t046": "A 35th-floor sky lounge overlooking the Yodo River.<br>A lounge with a fireplace<br class=\"sp\"> and a high-ceilinged lobby.<br>Staffed 24 hours, with a concierge.", "t032": "Straight out of the south windows lie the greenery of Umekita Park and the towers of Umeda. From sunrise to the night view, Grand Green Osaka, opened in 2024, spreads out below the 19th floor.", "t116": "* Some images are photos with colour, weather and planting adjusted by AI. Information is current as of October 2026.", "t038": "A 15.3-jo living and dining room, a 3.9-jo kitchen,<br>and two bedrooms of 7.5 and 7.1 jo.<br>The entrance hall is finished in marble.", "t112": "* Price and fees are as of October 2026. Please contact us for the latest availability.", "t062": "A 48-storey tower on seismic isolation.<br>Staffed around the clock,<br>with a healthy repair reserve.", "t011": "The park at Grand Green Osaka<br>and the towers of Umeda, seen from the living room.", "t099": "81.94㎡ (wall-centre) / 79.47㎡ registered<br>Balconies 8.94㎡", "t004": "Grand Front Osaka<br class=\"pc\"> Owners Tower", "t009": "<span>Price</span><b>¥249,800,000</b>", "t111": "On site, ¥35,000–68,000 / month<br>(availability to be confirmed)", "t101": "Steel-reinforced concrete (SRC)<br>48 floors above ground, 1 below (seismic isolation)", "t078": "Grand Front Osaka<br>Owners Tower, Unit 1906", "t113": "* Furniture in the 3D floor plan is for illustration. The unit is currently vacant.", "t010": "From the 19th-floor south windows,<br>Umekita's green and the Umeda skyline", "t114": "In the heart of Osaka,<br>green and sky, every day.", "t001": "Grand Front Osaka Owners Tower 1906", "t037": "Dark wood and stone:<br>the 2LDK interior", "t031": "High above<br>Grand Green Osaka", "t058": "Next to Osaka Station,<br>in the Umekita forest", "t115": "Price <b>¥249,800,000</b>", "t015": "525<small> units</small>", "t013": "S<small>-facing</small>", "t066": "Concierge, interior corridors, auto-lock", "t017": "6<small> min</small>", "t045": "Spaces that welcome you<br>like a hotel", "t068": "No borrowings (as of July 31, 2024)", "t022": "A south-facing<br>2LDK on the 19th floor", "t080": "<b>¥249,800,000</b>", "t061": "Seismic isolation<br>and reliable management", "t064": "SRC, 48 floors above ground, 1 below", "t091": "3-40 Ofukacho, Kita-ku, Osaka", "t003": "The Umekita forest, your garden below.", "t048": "35F Lounge dining room", "t086": "Window cleaning ¥300 / month", "t067": "Repair reserve approx. ¥1.33 billion", "t074": "Managed by Mitsubishi Jisho Community", "t043": "Walk-in closet", "t072": "Built by Obayashi and Takenaka", "t093": "JR Osaka Sta., 6 min walk", "t097": "2LDK (type 80D)", "t026": "Bedroom 1 approx. 7.5 jo", "t027": "Bedroom 2 approx. 7.1 jo", "t030": "Balconies 8.94㎡", "t033": "Morning: towers in the sunrise", "t047": "35F Sky lounge", "t049": "35F View toward the Yodo River", "t007": "6 min walk to JR Osaka", "t025": "Kitchen approx. 3.9 jo", "t034": "Midday: the park and Umeda under clear skies", "t036": "Night: Umeda lit up", "t054": "Lobby with chandelier", "t056": "Hotel-style interior corridor", "t070": "Under the pet regulations", "t109": "Mitsubishi Jisho Community", "t002": "¥249,800,000", "t006": "81.94㎡ interior", "t021": "Furniture is for illustration", "t024": "LD approx. 15.3 jo", "t039": "Living and dining", "t044": "Marble entrance hall", "t050": "Double-height lounge", "t055": "Elevator hall", "t071": "Completed March 2013", "t075": "Sale & property outline", "t082": "¥24,580 / month", "t107": "Obayashi / Takenaka", "t019": "Walk to JR Osaka", "t040": "The LD from the window side", "t051": "Lounge facing the garden", "t060": "* Walking time.", "t065": "Staffed 24 hours", "t073": "525 residences", "t084": "¥8,190 / month", "t089": "Immediate (as is)", "t095": "19th floor (south-facing)", "t005": "19F, south-facing", "t028": "Powder room", "t035": "Evening: the sunset sky", "t105": "March 2013", "t041": "From the bedroom window", "t069": "Pets allowed", "t020": "3D floor plan", "t057": "Unit entrance", "t083": "Repair reserve", "t085": "Other costs", "t100": "Structure / scale", "t052": "Lounge", "t063": "Seismic isolation", "t079": "Price", "t098": "Interior area", "t103": "525 units", "t012": "South-facing", "t053": "Lobby", "t076": "Floor plan", "t077": "Property", "t081": "Management fee", "t088": "Handover", "t090": "Address", "t094": "Floor", "t096": "Layout", "t102": "Total units", "t110": "Parking", "t008": "Vacant", "t014": "-facing", "t029": "Bathroom", "t042": "Bedroom", "t087": "Current status", "t092": "Access", "t104": "Completed", "t106": "Builder", "t108": "Management", "t016": "units", "t018": "min"}, "zh": {"x001": "JR「大阪」站", "t059": "位于Grand Front Osaka北侧的<br>梅北再开发区域。<br>2024年9月先行开放的<br>Grand Green Osaka公园就在附近。<br>步行6分钟即到JR大阪站。", "t023": "约15.3帖的客餐厅居中，<br>两间卧室左右相拥，<br>间间朝南，采光充盈。<br>步入式衣帽间，<br>大理石玄关，气度从容。", "t046": "35层的空中酒廊可眺望淀川。<br>有壁炉的休息厅，<br class=\"sp\">挑高的大堂。<br>24小时有人管理，配备礼宾服务。", "t032": "南窗正对梅北公园的绿地和梅田的高楼群。从朝阳到夜景，可在19层一览2024年先行开放的Grand Green Osaka。", "t116": "※部分图片为基于实拍、由AI调整色调・天气・绿化的示意图。刊载内容为2026年10月时点信息。", "t038": "客餐厅约15.3帖，厨房约3.9帖，<br>卧室约7.5帖和约7.1帖两间。<br>玄关铺设大理石。", "t112": "※售价及管理费等为2026年10月时点信息。最新出售情况请咨询。", "t062": "地上48层的隔震塔楼。<br>24小时有人管理，<br>修缮基金储备充足。", "t011": "绿园如画，楼影参差，<br>尽收客厅一窗之中。", "t099": "81.94㎡（墙心）／登记 79.47㎡<br>阳台 8.94㎡", "t004": "大阪GRAND FRONT<br class=\"pc\"> OWNERS TOWER", "t009": "<span>售价</span><b>人民币 1,060万元</b><small>（2.498亿日元）</small>", "t111": "小区内 每月35,000〜68,000日元<br>（空位需确认）", "t101": "钢骨钢筋混凝土结构<br>地上48层・地下1层（隔震结构）", "t078": "大阪GRAND FRONT<br>OWNERS TOWER　1906号室", "t113": "※3D户型图中的家具为示意。现况为空房。", "t010": "十九层南窗外，<br>梅北翠色与梅田天际", "t114": "居大阪之心，<br>揽绿意晴空入日常。", "t001": "大阪GRAND FRONT OWNERS TOWER 1906", "t037": "深色地板与石材相映的<br>两居室内", "t031": "俯瞰<br>Grand Green Osaka", "t058": "大阪站旁，<br>住在梅北的绿意之中", "t115": "售价<b>人民币 1,060万元</b><small style=\"font-size:11px;color:#cfc9bd;margin-left:8px\">（2.498亿日元）</small>", "t015": "525<small>户</small>", "t013": "南<small>向</small>", "t066": "礼宾服务・内廊・自动门禁", "t017": "6<small>分钟</small>", "t045": "如酒店般的<br>迎宾空间", "t068": "借款0日元（截至2024年7月末）", "t022": "十九层朝南，<br>雅致两居", "t080": "<b>人民币 1,060万元</b>（2.498亿日元）<br><small>※100日元≈4.2439人民币（2026年10月18日 中国银行折算价）</small>", "t061": "隔震结构，<br>管理可靠", "t064": "钢骨钢筋混凝土结构 地上48层・地下1层", "t091": "大阪府大阪市北区大深町3-40", "t003": "揽梅北森景　枕都心繁华", "t048": "35F 酒廊餐厅", "t086": "窗户清洁费 300日元／月", "t067": "修缮基金 约13.3亿日元", "t074": "管理 三菱地所Community", "t043": "步入式衣帽间", "t072": "施工 大林组・竹中工务店", "t093": "JR「大阪」站 步行6分钟", "t097": "2LDK（80D户型）", "t026": "卧室(1) 约7.5帖", "t027": "卧室(2) 约7.1帖", "t030": "阳台 8.94㎡", "t033": "清晨　朝阳映照的楼群", "t047": "35F 空中酒廊", "t049": "35F 淀川方向的景观", "t007": "步行6分钟至JR大阪站", "t025": "厨房 约3.9帖", "t034": "白天　晴空下的公园与梅田", "t036": "夜晚　灯火点亮的梅田", "t054": "水晶吊灯大堂", "t056": "酒店式内廊", "t070": "依宠物饲养细则", "t109": "三菱地所Community", "t002": "人民币 1,060万元", "t006": "专有面积 81.94㎡", "t021": "家具为示意", "t024": "客餐厅 约15.3帖", "t039": "客餐厅", "t044": "大理石玄关", "t050": "挑高休息厅", "t055": "电梯厅", "t071": "2013年3月竣工", "t075": "出售概要・物业概要", "t082": "约1,040元／月（24,580日元）", "t107": "大林组・竹中工务店", "t019": "步行至JR大阪站", "t040": "从窗边看客餐厅", "t051": "面向绿植的休息厅", "t060": "※为步行时间。", "t065": "24小时有人管理", "t073": "总户数 525户", "t084": "约350元／月（8,190日元）", "t089": "即时（现状交房）", "t095": "19层（朝南）", "t005": "19层 坐北朝南", "t028": "盥洗室", "t035": "傍晚　晚霞满天", "t105": "2013年3月", "t041": "卧室窗外", "t069": "可饲养宠物", "t020": "3D户型图", "t057": "住户入户门", "t083": "修缮基金", "t085": "其他费用", "t100": "结构・规模", "t052": "休息厅", "t063": "隔震结构", "t079": "售价", "t098": "专有面积", "t103": "525户", "t012": "朝南", "t053": "大堂", "t076": "户型图", "t077": "物业名称", "t081": "管理费", "t088": "交房时间", "t090": "地址", "t094": "所在楼层", "t096": "户型", "t102": "总户数", "t110": "停车场", "t008": "空房", "t014": "向", "t029": "浴室", "t042": "卧室", "t087": "现况", "t092": "交通", "t104": "竣工", "t106": "施工", "t108": "管理公司", "t016": "户", "t018": "分钟"}};
-var I18N_META={"title": ["Grand Front Osaka Owners Tower 1906 for Sale | 19F south-facing 2LDK, 81.94㎡, ¥249.8M", "大阪GRAND FRONT OWNERS TOWER 1906（出售）｜19层朝南・2LDK・81.94㎡"], "description": ["Unit 1906 for sale on the 19th floor of Grand Front Osaka Owners Tower: a south-facing 2LDK of 81.94㎡ overlooking the park at Grand Green Osaka, 6 minutes' walk from JR Osaka Station. Views, interiors and the 35th-floor sky lounge in photos.", "大阪GRAND FRONT OWNERS TOWER 19层 1906号室出售。81.94㎡朝南两居，俯瞰Grand Green Osaka公园，步行6分钟至JR大阪站。以图片呈现景观、室内与35层空中酒廊。"]};
 (function(){
-  var els=null;
-  function setLang(l){
-    if(l!=='en'&&l!=='zh')l='ja';
-    if(!els){els=Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));els.forEach(function(e){e.setAttribute('data-ja',e.innerHTML);});}
-    els.forEach(function(e){var id=e.getAttribute('data-i18n');var t=(l==='ja')?e.getAttribute('data-ja'):(I18N[l][id]||e.getAttribute('data-ja'));if(e.innerHTML!==t)e.innerHTML=t;});
-    document.documentElement.lang=l;
-    var ti=document.querySelector('title'),md=document.querySelector('meta[name="description"]');
-    if(!ti.getAttribute('data-ja')){ti.setAttribute('data-ja',ti.textContent);md.setAttribute('data-ja',md.getAttribute('content'));}
-    ti.textContent=(l==='ja')?ti.getAttribute('data-ja'):I18N_META.title[l==='en'?0:1];
-    md.setAttribute('content',(l==='ja')?md.getAttribute('data-ja'):I18N_META.description[l==='en'?0:1]);
-    document.querySelectorAll('#lang a').forEach(function(a){a.classList.toggle('on',a.getAttribute('data-lang')===l);});
-    try{localStorage.setItem('lang',l);}catch(e){}
-    var box=document.getElementById('pdfs');if(box){var a=box.querySelector('a[data-pdf="'+l+'"]');if(a){box.querySelectorAll('a').forEach(function(x){x.classList.remove('on');});a.classList.add('on');box.insertBefore(a,box.querySelector('a'));}}
+  var lb,tr,cpT,cpN,pv,nx,list=[],idx=0,open=false,pushed=false;
+  document.documentElement.classList.add('lbx-on');
+  function build(){
+    lb=document.createElement('div');lb.className='lbx';
+    lb.innerHTML='<div class="tr"></div><button class="x" aria-label="close">&times;</button><button class="pv" aria-label="prev">&#8249;</button><button class="nx" aria-label="next">&#8250;</button><div class="cp"><span class="t"></span><span class="n"></span></div>';
+    document.body.appendChild(lb);
+    tr=lb.querySelector('.tr');cpT=lb.querySelector('.cp .t');cpN=lb.querySelector('.cp .n');pv=lb.querySelector('.pv');nx=lb.querySelector('.nx');
+    lb.querySelector('.x').addEventListener('click',function(e){e.stopPropagation();close();});
+    pv.addEventListener('click',function(e){e.stopPropagation();go(idx-1);});
+    nx.addEventListener('click',function(e){e.stopPropagation();go(idx+1);});
+    var x0=0,y0=0,t0=0,dx=0,dy=0,mode='';
+    lb.addEventListener('touchstart',function(e){if(e.touches.length>1)return;x0=e.touches[0].clientX;y0=e.touches[0].clientY;t0=Date.now();dx=dy=0;mode='';tr.classList.remove('an');},{passive:true});
+    lb.addEventListener('touchmove',function(e){if(e.touches.length>1)return;dx=e.touches[0].clientX-x0;dy=e.touches[0].clientY-y0;
+      if(!mode&&(Math.abs(dx)>8||Math.abs(dy)>8))mode=Math.abs(dx)>=Math.abs(dy)?'h':'v';
+      if(mode==='h'){var r=(idx===0&&dx>0)||(idx===list.length-1&&dx<0)?.3:1;tr.style.transform='translate3d('+(-idx*lb.clientWidth+dx*r)+'px,0,0)';}
+      else if(mode==='v'&&dy>0){tr.style.transform='translate3d('+(-idx*lb.clientWidth)+'px,'+dy+'px,0)';lb.style.background='rgba(6,7,9,'+Math.max(.4,.96-dy/600)+')';}
+      e.preventDefault();},{passive:false});
+    lb.addEventListener('touchend',function(){var fast=Date.now()-t0<300;tr.classList.add('an');lb.style.background='';
+      if(mode==='h'&&(Math.abs(dx)>lb.clientWidth*.18||(fast&&Math.abs(dx)>30)))go(idx+(dx<0?1:-1));
+      else if(mode==='v'&&dy>110)close();else if(mode)go(idx);});
+    lb.addEventListener('click',function(e){if(e.target===lb||e.target.className==='sl'||e.target===tr)close();});
+    document.addEventListener('keydown',function(e){if(!open)return;if(e.key==='Escape')close();else if(e.key==='ArrowLeft')go(idx-1);else if(e.key==='ArrowRight')go(idx+1);});
+    window.addEventListener('resize',function(){if(open){tr.classList.remove('an');go(idx);}});
+    window.addEventListener('popstate',function(){if(open){pushed=false;close();}});
   }
-  document.querySelectorAll('#lang a').forEach(function(a){a.addEventListener('click',function(){setLang(a.getAttribute('data-lang'));});});
-  var q=(location.search.match(/[?&]lang=(ja|en|zh)/)||[])[1],st=null;try{st=localStorage.getItem('lang');}catch(e){}
-  setLang(q||st||'ja');
+  function load(i){var sl=tr.children[i];if(!sl)return;var im=sl.firstChild;if(!im.src)im.src=im.getAttribute('data-src');}
+  function go(i){i=Math.max(0,Math.min(list.length-1,i));idx=i;
+    tr.style.transform='translate3d('+(-i*lb.clientWidth)+'px,0,0)';
+    load(i);load(i+1);load(i-1);
+    var f=list[i].closest('figure'),t=f&&f.querySelector('figcaption .t');
+    cpT.textContent=t?t.textContent:(list[i].alt||'');cpN.textContent=list.length>1?(i+1)+' / '+list.length:'';
+    pv.disabled=i===0;nx.disabled=i===list.length-1;}
+  function ok(im){var f=im.closest('figure');return f&&!f.querySelector('.ovl')&&!f.hasAttribute('data-nolb')&&im.clientWidth>=120;}
+  function show(img){
+    if(!lb)build();
+    var sec=img.closest('section')||document.body;
+    list=[].slice.call(sec.querySelectorAll('figure img')).filter(ok);
+    tr.innerHTML='';
+    list.forEach(function(im){var d=document.createElement('div');d.className='sl';var n=document.createElement('img');n.setAttribute('data-src',im.currentSrc||im.src);n.alt=im.alt||'';d.appendChild(n);tr.appendChild(d);});
+    lb.classList.add('on');open=true;document.documentElement.style.overflow='hidden';
+    tr.classList.remove('an');go(list.indexOf(img));
+    requestAnimationFrame(function(){tr.classList.add('an');});
+    try{history.pushState({lbx:1},'');pushed=true;}catch(e){}
+  }
+  function close(){if(!open)return;open=false;lb.classList.remove('on');document.documentElement.style.overflow='';
+    if(pushed){pushed=false;try{history.back();}catch(e){}}}
+  document.addEventListener('click',function(e){var im=e.target.closest&&e.target.closest('figure');if(!im||(lb&&lb.contains(im)))return;
+    var img=im.querySelector('img');if(img&&img.closest('section')&&ok(img)){e.preventDefault();show(img);}});
 })();
 </script>
 </body>
